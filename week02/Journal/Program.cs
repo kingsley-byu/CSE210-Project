@@ -29,7 +29,7 @@ class Program
             Console.WriteLine("4. Load");
             Console.WriteLine("5. Quit"); 
 
-            Console.Write("Choose from the options above");
+            Console.Write("Choose from the options above ");
             string choice = Console.ReadLine();
             if (choice == "1")
             {
@@ -43,8 +43,35 @@ class Program
 
                 Console.Write("YOUR ANSWER: ");
                 newEntry._entryText = Console.ReadLine();
-                
+
+                newEntry._date = DateTime.Now.ToLongDateString();
+                journal.AddEntry(newEntry);
             } 
+            else if (choice == "2")
+            {
+                journal.DisplayAll();
+            }
+
+            else if (choice == "3")
+            {
+                Console.Write("Enter filename: ");
+                string fileload = Console.ReadLine();
+
+                journal.saveToFile(fileload);
+            }
+            else if (choice == "4")
+            {
+              Console.Write("Enter filename: ");
+                string fileload = Console.ReadLine();
+
+                journal.loadFromFile(fileload);  
+            }
+            else if (choice == "5")
+            {
+                programRunning = false;
+            }
+
+            Console.WriteLine();
         }  
     }
 }
