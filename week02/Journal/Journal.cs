@@ -31,8 +31,19 @@ public class Journal
 
     public void loadFromFile(string file)
     {
-        string lines = System.IO.File.ReadAllLines(file);
+        string[] fileload = System.IO.File.ReadAllLines(file);
         _entries.Clear();
+
+        foreach (string line in fileload)
+        {
+            string[] parts = line.Split("|");
+            Entry entry = new Entry();
+
+            entry._date = parts[0];
+            entry._promptText = parts[1];
+            entry._entryText = parts[2];
+            _entries.Add(entry);
+        }
     }
     
 
