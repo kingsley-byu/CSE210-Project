@@ -4,6 +4,7 @@ using System.IO;
 
 public class Journal
 {
+    // This create an empty attributes entries that will hold all the user entries
     public List<Entry> _entries = new List<Entry>();
 
     public void AddEntry(Entry newEntry)
@@ -28,7 +29,7 @@ public class Journal
             }
         }
     }
-
+    // THe method load file from save file 
     public void loadFromFile(string file)
     {
         string[] fileload = System.IO.File.ReadAllLines(file);
@@ -44,6 +45,11 @@ public class Journal
             entry._entryText = parts[2];
             _entries.Add(entry);
         }
+    }
+    // This method keep track of the number of journal entries made and display the total
+    public void countEntries()
+    {
+        Console.WriteLine($"You have written {_entries.Count} journal entries.");
     }
     
 
