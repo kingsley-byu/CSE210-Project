@@ -29,7 +29,7 @@ public class Word
     {
         if (_isHidden)
         {
-            return "_____";
+            return "___";
         } 
         else
         {
