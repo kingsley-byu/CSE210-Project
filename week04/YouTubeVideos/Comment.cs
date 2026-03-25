@@ -13,16 +13,19 @@ public class Comment
 
     public string GetCommenterName()
     {
+        return _commenterName;
 
     }
 
     public string GetText()
     {
+        return _text;
 
     }
 
     public void Display()
     {
+        return $"{_commenterName}, {_text}";
 
     }
 
