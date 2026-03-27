@@ -1,8 +1,6 @@
 using System;
 using System.Collections.Generic;
-using System.Data.Common;
-using System.IO.Pipelines;
-using System.Reflection.Emit;
+
 
 public class Order
 {
@@ -26,15 +24,15 @@ public class Order
         {
             total += product.GetTotalCost();
 
-            if (_customer.IsInUSA())
-            {
-                total += 5;
-            }
+        if (_customer.IsInUSA())
+        {
+            total += 5;
+        }
 
-            else
-            {
-                total += 35;
-            }
+        else
+        {
+            total += 35;
+        }
         }
         return total;
     }
@@ -45,7 +43,7 @@ public class Order
         foreach (Product product in _products)
         {
             
-            id = product.GetName() + " " + product.GetProductId();
+            id += product.GetName() + " " + product.GetProductId()\n;
         } 
         return id;
     }
