@@ -13,12 +13,29 @@ public class Order
 
     public void AddProduct(Product product)
     {
-        
+        _products.Add(product);
     }
 
     public decimal GetTotalPrice()
     {
-        
+        decimal total = 0; 
+        foreach (Product product in _products)
+        {
+            total += product.GetTotalCost();
+
+            if (_customer.IsInUSA())
+            {
+                total += 5;
+            }
+
+            else
+            {
+                total += 35;
+            }
+            return total;
+
+
+        }
     }
 
     public string GetPackingLabel()

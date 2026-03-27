@@ -3,14 +3,14 @@ public class Product
 {
     private string _productName;
     private string _productId;
-    private decimal _PricePerUnit;
+    private decimal _pricePerUnit;
     private int _quantity;
 
     public Product(string productName, string productId, decimal pricePerUnit, int quantity)
     {
         _productName = productName;
         _productId = productId;
-        _PricePerUnit = pricePerUnit;
+        _pricePerUnit = pricePerUnit;
         _quantity = quantity;
     }
 
@@ -28,6 +28,6 @@ public class Product
 
     public decimal GetTotalCost()
     {
-        return _PricePerUnit *_quantity;
+        return _pricePerUnit *_quantity;
     }
 }
