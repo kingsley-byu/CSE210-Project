@@ -15,7 +15,7 @@ public class Address
 
     }
 
-    public bool IsUSA()
+    public bool IsInUSA()
     {
        if (_country == "USA")
         {
@@ -29,7 +29,7 @@ public class Address
 
     public string GetFullAddress()
     {
-        return $"{_streetAddress}, {_city}, {_stateProvince}, {_country}";
+        return $"{_streetAddress}\n {_city}\n {_stateProvince}\n {_country}";
     }
 } 
  
