@@ -25,7 +25,8 @@ public class Comment
 
     public void Display()
     {
-        return $"{_commenterName}, {_text}";
+        Console.WriteLine($"Commener name | Comment");
+        Console.WriteLine($"{_commenterName}:  {_text}");
 
     }
 

@@ -1,12 +1,12 @@
 using System;
-using System.Collection.Generic;
+using System.Collections.Generic;
 
 public class Video
 {
     private string _title;
-    private string author;
+    private string _author;
     private int _length;
-    private List<Comment> _comment = new List<Comment>
+    private List<Comment> _comment = new List<Comment>();
 
     public Video(string title,  string author, int length)
     {
@@ -17,16 +17,19 @@ public class Video
 
     public void AddComment(Comment comment)
     {
-        
+       _comment.Add(comment); 
     }
 
     public int GetNumberOfComment()
     {
+        return _comment.Count;
 
     }
 
     public void Display()
     {
-
+        Console.WriteLine("Title | Author | Length of comment");
+        Console.WriteLine($"{_title} | {_author} | {_length}");
+        
     }
 }
