@@ -20,7 +20,7 @@ public class Video
        _comment.Add(comment); 
     }
 
-    public int GetNumberOfComment()
+    public int GetNumberOfComments()
     {
         return _comment.Count;
 
@@ -28,8 +28,13 @@ public class Video
 
     public void Display()
     {
-        Console.WriteLine("Title | Author | Length of comment");
-        Console.WriteLine($"{_title} | {_author} | {_length}");
-        
+        Console.WriteLine("Title | Author | Video length");
+        Console.WriteLine($"{_title} | {_author} | {_length} seconds");
+        Console.WriteLine($"Number of comments: {{GetNumberOfComments}}")
+        Console.WriteLine("Comments: ");
+        foreach (Comment comment in _comment)
+        {
+            comment.Display();
+        }
     }
 }
