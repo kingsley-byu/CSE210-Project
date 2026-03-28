@@ -1,0 +1,95 @@
+=============================================================
+DIAGRAM 1 — YOUTUBE VIDEO TRACKING PROGRAM
+=============================================================
+
++----------------------------------------------------------+
+|                         Program                          |
+|                                                          |
+|   videos : List<Video>                                  |
+|                                                          |
+|  + Main(args: string[]) : void                           |
++------------------------+---------------------------------+
+                         | 
+                         v
++----------------------------------------------------------+
+|                          Video                           |
+|                                                          |
+|  - _title : string                                       |
+|  - _author : string                                      |
+|  - _length : int                                         |
+|  - _comment : List<Comment>                              |
+|                                                          |
+|   Video(title, author, length)                           |
+|   AddComment(comment: Comment) : void                    |
+|   GetNumberOfComments() : int                            |
+|   Display() : void                                       |
++------------------------+---------------------------------+
+                         | 
+                         v
++----------------------------------------------------------
+|                         Comment                         |
+|                                                         |
+|   _commenterName : string                               |
+|   _text : string                                        |
+|                                                         |
+|   Comment(commenterName: string, text: string)          |
+|   GetCommenterName() : string                           |
+|   GetText() : string                                    |
+|   Display() : void                                      |
++----------------------------------------------------------
+
+
+============================================================
+DIAGRAM 2 — PRODUCT ORDERING SYSTEM
+============================================================
+
++----------------------------------------------------------+
+|                         Program                          |
+|                                                          |
+|  - orders : List<Order>                                  |
+|                                                          |
+|   Main(args: string[]) : void                            |
++------------------------+---------------------------------+
+                         | 
+                         v
++----------------------------------------------------------+
+|                          Order                           |
+|                                                          |
+|  - _products : List<Product>                             |
+|  - _customer : Customer                                  |
+|                                                          |
+|   Order(customer: Customer)                              |
+|   AddProduct(product: Product) : void                    |
+|   GetTotalPrice() : decimal                              |
+|   GetPackingLabel() : string                             |
+|   GetShippingLabel() : string                            |
++------------+-----------------------------+---------------+
+             |              | 
+             v                             v
++----------------------+     +------------------------------+
+|        Product       |     |           Customer           |
+|                      |     |                              |
+|  - _productName      |     |  - _name : string            |
+|  - _productId        |     |  - _address : Address        |
+|  - _pricePerUnit     |     |                              |
+|  - _quantity         |     |  + Customer(name, address)   |
+|                      |     |  + GetName() : string        |
+|  + Product(name,     |     |  + IsInUSA() : bool          |
+|    productId,        |     |  + GetShippingLabel()        |
+|    pricePerUnit,     |     |    : string                  |
+|    quantity)         |     +---------------+--------------+
+|  + GetName()         |                     | 
+|  + GetProductId()    |                     v
+|  + GetTotalCost()    |     +------------------------------+
+|                      |     |           Address            |
++----------------------+     |                              |
+                             |   _streetAddress : string    |
+                             |   _city : string             |
+                             |   _stateProvince : string    |
+                             |   _country : string          |
+                             |                              |
+                             |   Address(street, city,      |
+                             |    state, country)           |
+                             |   IsInUSA() : bool           |
+                             |   GetFullAddress() : string  |
+                             +------------------------------+
