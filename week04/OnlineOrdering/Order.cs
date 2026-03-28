@@ -43,7 +43,7 @@ public class Order
         foreach (Product product in _products)
         {
             
-            id += product.GetName() + " " + product.GetProductId()\n;
+            id += product.GetName() + " " + product.GetProductId();
         } 
         return id;
     }
