@@ -22,6 +22,8 @@ public class ListingActivity : Activity
     {
        DisplayStartingMessage();
        Console.WriteLine(GetRandomPrompt());
+       Console.WriteLine("You have a few seconds to  seconds to think about the prompt...");
+       Console.WriteLine("Start listing items! ");
        ShowCountDown(5);
        GetListFromUser();
        Console.WriteLine($"You listed {_count} items");
