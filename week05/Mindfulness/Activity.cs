@@ -60,7 +60,7 @@ public class Activity
         DateTime currentTime = DateTime.Now;
         if (currentTime <endTime)
         {
-            Console.WriteLine("Done✅✅");
+            Console.WriteLine("Done");
         }
 
         
