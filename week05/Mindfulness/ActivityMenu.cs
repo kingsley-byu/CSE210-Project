@@ -6,8 +6,9 @@ public class ActivityMenu
         Console.WriteLine("Welcome to the Mindfulness program!");
         Console.WriteLine("Please choose an activity: ");
         Console.WriteLine("1. Breathing Activity");
-        Console.WriteLine("1. Reflecting Activity");
-        Console.WriteLine("1. Listing Activity");
+        Console.WriteLine("2. Reflecting Activity");
+        Console.WriteLine("3. Listing Activity");
+        Console.WriteLine("4. Quit");
     }
     public void Run()
     {
@@ -15,6 +16,7 @@ public class ActivityMenu
         while (running)
         {
             DisplayMenu();
+            Console.Write("Select a choice");
             string choice = Console.ReadLine();
             switch (choice)
             {
@@ -31,6 +33,12 @@ public class ActivityMenu
                 case "3":
                 ListingActivity listing = new ListingActivity();
                 listing.Run();
+                break;
+                case "4":
+                running = false;
+                break;
+                default:
+                Console.WriteLine("Invalid choice, please try again.");
                 break;
             }
         }
