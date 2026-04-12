@@ -20,7 +20,7 @@ public abstract class Goal
     public virtual string GetDetailsString()
     {
         string completed = IsComplete() ? "[X]" : "[]";
-        return $"{completed} {GetName()} {GetDescription}";
+        return $"{completed} {GetName()} {GetDescription()}";
     }
     
 

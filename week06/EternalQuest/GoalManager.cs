@@ -105,7 +105,7 @@ public class GoalManager
     }
     public void SaveGoals()
     {
-        Console.Write("Create a file name");
+        Console.Write("Create a file name: ");
         string filename = Console.ReadLine();
         using (StreamWriter outputFile = new StreamWriter(filename))
         {
@@ -140,7 +140,8 @@ public class GoalManager
                 case "EternalGoal":
                 EternalGoal eternalGoal = new EternalGoal(parts[1], parts[2], int.Parse(parts[3]));
                 _goals.Add(eternalGoal);
-                break; default:
+                break;
+                default:
                 Console.WriteLine("Invalid choice, please try again.");
                 break;
             }
