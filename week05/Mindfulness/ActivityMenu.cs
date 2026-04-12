@@ -50,6 +50,8 @@ public class ActivityMenu
                 default:
                 Console.WriteLine("Invalid choice, please try again.");
                 break;
+
+                
             }
             
         }
